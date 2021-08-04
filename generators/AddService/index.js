@@ -33,10 +33,9 @@ var ClassGenerator = class extends Generator {
       },
     ];
 
-    await this.prompt(prompts).then(function (props) {
-      this.props = props;
-      this.config.set(props);
-    });
+    var props = await this.prompt(prompts);
+    this.props = props;
+    this.config.set(props);
   }
 
   writing() {
